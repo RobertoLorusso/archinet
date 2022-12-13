@@ -1,0 +1,5 @@
+outs:
+- md5: 7f43a64b77d79803f6f79878cd34978a.dir
+  size: 852927862
+  nfiles: 6051
+  path: arcDataset
