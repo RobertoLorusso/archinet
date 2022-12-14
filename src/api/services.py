@@ -5,16 +5,9 @@ from fastapi import UploadFile
 import numpy as np
 from src.api.utils import *
 
-
-
-
-
-
 dataset_csv = os.path.join("data", "external", "dataset.csv")
 classification_csv = os.path.join("data", "external", "predictions.csv")
 dictionary_csv = os.path.join("data", "external", "dictionary.csv")
-
-
 
 # riceve un'immagine e fornisce la predizione. l'immagine e la predizione vengono salvate.
 async def do_predict(file: UploadFile, model):
