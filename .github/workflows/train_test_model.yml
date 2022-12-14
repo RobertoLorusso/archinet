@@ -29,13 +29,10 @@ jobs:
       - name: Dvc pull
         run: |
           dvc pull
-      - name: Great Expectations tests
-        run: |
-          python src/data/feature_extraction.py
-          pytest src/tests/run_img_features_checkpoint.py
       - name: Dvc repro
         run: |
           dvc repro
       - name: Model tests
         run: |
           pytest src/tests/test_performances.py
+      
