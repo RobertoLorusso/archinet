@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Dvc pull
         run: |
-          dvc pull
+          dvc pull -f -R
       - name: Great Expectations tests
         run: |
           python src/data/feature_extraction.py
