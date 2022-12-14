@@ -22,26 +22,19 @@ COPY dvc.lock /home/archinet/dvc.lock
 COPY .dvc /home/archinet/.dvc
 COPY .git /home/archinet/.git
 COPY .gitignore /home/archinet/.gitignore
-COPY .gitconfig /root/.gitconfig
-COPY .git-credentials /root/.git-credentials
-
 
 COPY cronjob.py /home/archinet/cronjob.py
-COPY dvc-cron.sh /home/archinet/dvc-cron.sh
-
 # Copy dvc-cron file to the cron.d directory
 COPY dvc-cron /etc/cron.d/dvc-cron
 # Give execution rights on the cron job and python file
 RUN chmod 0644 /etc/cron.d/dvc-cron
 RUN chmod 0644 /home/archinet/cronjob.py
-RUN chmod 0744 /home/archinet/dvc-cron.sh
 # Apply cron job
 RUN crontab /etc/cron.d/dvc-cron
 
 WORKDIR /home/archinet
 EXPOSE 81
 CMD /usr/sbin/cron && uvicorn src.api.server:app --reload --host 0.0.0.0 --port 81
-
 
 
 #docker build . -t roblor/se4ai 
