@@ -12,6 +12,7 @@ from src.api.services import do_predict, do_upload, evaluate_classification
 
 path_saved_model = os.path.join("models", "saved-model-optimal")
 
+
 ## remove the parameter cur_path if appears the error "No such file 'params.yaml'"
 model = Model()
 model = model.loadModel(path_saved_model)
