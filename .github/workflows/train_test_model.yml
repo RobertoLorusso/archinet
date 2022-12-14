@@ -2,7 +2,7 @@ name: train_test_model
 on:
   push:
     branches:
-      - development
+      - main
     paths:
       - 'params.yaml'
 
