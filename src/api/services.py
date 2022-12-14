@@ -10,6 +10,7 @@ classification_csv = os.path.join("data", "external", "predictions.csv")
 dictionary_csv = os.path.join("data", "external", "dictionary.csv")
 
 
+
 # riceve un'immagine e fornisce la predizione. l'immagine e la predizione vengono salvate.
 async def do_predict(file: UploadFile, model):
     '''Implement the behaviour of the predict endpoint'''
