@@ -9,7 +9,7 @@ on:
 jobs:
   push_to_registry:
     name: Execute tests od data, train and test the model
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
