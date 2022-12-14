@@ -2,22 +2,20 @@ name: train_test_model
 on:
   push:
     branches:
-      - main
+      - development
     paths:
       - 'params.yaml'
 
 jobs:
   push_to_registry:
     name: Execute tests od data, train and test the model
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - name: Setup DVC
-        uses: iterative/setup-dvc@v1
       - name: Check out the repo
         uses: actions/checkout@v3
       - name: Dvc pull
         run: |
-          dvc pull -f -R
+          dvc pull
       - name: Great Expectations tests
         run: |
           python src/data/feature_extraction.py
