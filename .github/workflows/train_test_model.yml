@@ -11,6 +11,9 @@ jobs:
     name: Execute tests od data, train and test the model
     runs-on: ubuntu-latest
     steps:
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
       - name: Setup DVC
         uses: iterative/setup-dvc@v1
       - name: Check out the repo
